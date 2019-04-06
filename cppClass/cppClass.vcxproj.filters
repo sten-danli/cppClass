@@ -15,6 +15,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="stock00.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mainStock.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
     <ClCompile Include="stock00.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>

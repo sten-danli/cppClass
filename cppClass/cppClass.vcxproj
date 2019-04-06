@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="mainStock.cpp" />
     <ClCompile Include="stock00.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stock00.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

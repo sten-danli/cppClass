@@ -1,29 +1,11 @@
 #include<iostream>
-//#include<cstring>
-using namespace std;
+#include"stock00.h"
 
-class Stock
-{
-private:
-	string company;
-	long shares;
-	long share_val;
-	double total_val;
-	void set_tot()
-	{
-		total_val = shares * share_val;
-	}
-public:
-	void acquire(string co, long n, double pr);
-	void buy(long num, double price);
-	void sell(long num, double price);
-	void update(double price);
-	void show();
-};
 
 void Stock::acquire(string co, long n, double pr)
 {
 	company = co;
+
 	if (n < 0)
 	{
 		cout << "Number of shares cant be negative; "
@@ -42,5 +24,42 @@ void Stock::buy(long num, double price)
 	else
 	{
 		shares += num;
+		share_val = price;
+		set_tot();
 	}
+}
+
+void Stock::sell(long num, double price)
+{
+	if (num < 0)
+	{
+		cout << "Number of shares sold cant be negatie. "
+			<< "Transaction is aborted.\n";
+	}
+	else if (num > shares)
+	{
+		cout << "You cant sell more than you have!"
+			<< "Transaction is aborted.\n";
+	}
+	else
+	{
+		shares -= num;
+		share_val = price;
+		set_tot();
+	}
+}
+
+void Stock::update(double price)
+{
+	share_val = price;
+	set_tot();
+}
+
+void Stock::show()
+{
+	cout << "Company: " << company
+		<< " Shares: " << shares << '\n'
+		<< " Shares Price: $" << share_val
+		<< " Total Worth: $" << total_val << '\n';
+
 }
